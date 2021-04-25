@@ -4,7 +4,7 @@ See full to dos in Drinks V3. This list is just the list of items that will be d
 
 ## General
 
-- to fix className does not match issue: https://github.com/vercel/next.js/issues/7322#issuecomment-811463256
+- [x] to fix className does not match issue: https://github.com/vercel/next.js/issues/7322#issuecomment-811463256
 
 ## Styles
 
@@ -12,4 +12,4 @@ See full to dos in Drinks V3. This list is just the list of items that will be d
 
 ## Header Component
 
-- Does not support logged in / logged out state
+- Does not support conditonal rendering for logged in / logged out state
