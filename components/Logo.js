@@ -9,7 +9,7 @@ const LogoStyles = styled.div`
     width: 24px;
   }
   p {
-    font-family: 'Offside', sans - serif;
+    font-family: 'Offside', cursive;
     font-size: 24px;
     padding: 0 0 0 12px;
     color: var(--orange);
