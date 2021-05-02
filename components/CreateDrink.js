@@ -1,4 +1,6 @@
 import useForm from "../lib/useForm";
+import FormStyles from './styles/FormStyles';
+import PrimaryBtn from './styles/PrimaryBtn';
 
 export default function CreateDrink() {
   const { inputs, handleChange, clearForm, resetForm } = useForm({
@@ -6,31 +8,32 @@ export default function CreateDrink() {
     description: 'This is the best drink.'
   });
   return (
-    <form>
-      <label htmlFor="name">
-        Drink Name
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          placeholder="Drink Name" 
-          value={inputs.name}  
-          onChange={handleChange}
-        />
-      </label>
-      <label htmlFor="description">
-        Drink Description
-        <input
-          type="text"
-          id="description"
-          name="description"
-          placeholder="Drink Description"
-          value={inputs.description}
-          onChange={handleChange}
-        />
-      </label>
-      <button type="button" onClick={clearForm}>Clear Form</button>
-      <button type="button" onClick={resetForm}>Reset Form</button>
-    </form>
+    <FormStyles>
+      <fieldset disabled>
+        <label htmlFor="name">
+          Drink Name
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="Drink Name" 
+            value={inputs.name}  
+            onChange={handleChange}
+          />
+        </label>
+        <label htmlFor="description">
+          Drink Description
+          <input
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Drink Description"
+            value={inputs.description}
+            onChange={handleChange}
+          />
+        </label>
+      <PrimaryBtn type="submit">+ Add Drink</PrimaryBtn> {/* TODO: this might have two styles applied from Form Styles & Primary Btn Component */}
+      </fieldset>
+    </FormStyles>
   )
 }
