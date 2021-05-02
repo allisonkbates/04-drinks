@@ -35,16 +35,6 @@ box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
       border-color: var(--orange);
     }
   }
-  button,
-  input[type='submit'] {
-    width: auto;
-    background: var(--orange);
-    color: white;
-    border: 0;
-    font-size: 2rem;
-    font-weight: 600;
-    padding: 0.5rem 1.2rem;
-  }
   fieldset {
     border: 0;
     padding: 0;
