@@ -3,7 +3,6 @@ import { ApolloProvider } from '@apollo/client';
 import withData from '../lib/withData';
 
 function MyApp({ Component, pageProps, apollo }) {
-  console.log(apollo);
   return (
     <ApolloProvider client={apollo}>
       <Page>
