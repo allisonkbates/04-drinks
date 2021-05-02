@@ -13,4 +13,5 @@ See full to dos in Drinks V3. This list is just the list of items that will be d
 
 ## Header Component
 
+- Add mobile styles - logo breaks and looks bad at <800px
 - Does not support conditonal rendering for logged in / logged out state
