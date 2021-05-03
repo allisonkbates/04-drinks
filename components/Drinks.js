@@ -19,11 +19,10 @@ const ALL_DRINKS_QUERY = gql`
   }
 `;
 
-
 const DrinksListStyles = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
 `;
 
 

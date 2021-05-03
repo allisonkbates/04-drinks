@@ -32,7 +32,7 @@ export default function CreateDrink() {
             onChange={handleChange}
           />
         </label>
-      <PrimaryBtn type="submit">+ Add Drink</PrimaryBtn> {/* TODO: this might have two styles applied from Form Styles & Primary Btn Component */}
+        <PrimaryBtn type="submit">+ Add Drink</PrimaryBtn>
       </fieldset>
     </FormStyles>
   )

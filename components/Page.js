@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
     --orange: #D4652E;
     --darkGray: #4F4f4F;
     --white: #FFFFFF;
-    --maxWidth: 1000px;
+    --maxWidth: 1200px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
     font-size: 62.5%;
@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-    line-height: 2
+    line-height: 2;
   }
   a {
     text-decoration: none;
