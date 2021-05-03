@@ -47,9 +47,9 @@ box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
       display: block;
       background-image: linear-gradient(
         to right,
-        #ff3019 0%,
-        #e2b04a 50%,
-        #ff3019 100%
+        var(--orange) 0%,
+        #e2b04a 50%, /* TODO - pick a better color */
+        var(--orange) 100%
       );
     }
     &[aria-busy='true']::before {
