@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const PrimaryBtn = styled.button`
+const PrimaryLink = styled.div`
   background-color: var(--orange);
   color: var(--white);
   border: none;
@@ -8,9 +8,10 @@ const PrimaryBtn = styled.button`
   padding: 0rem 2rem;
   border-radius: 8px;
   font-family: 'Offside';
-  font-size: 1.5rem;
-  margin: 0px;
+  display: flex;
+  align-items: center;
+  margin: 6px;
   cursor: pointer;
 `;
 
-export default PrimaryBtn;
+export default PrimaryLink;

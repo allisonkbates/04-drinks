@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const LogoStyles = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  cursor: pointer;
   img {
     width: 24px;
   }
@@ -19,9 +21,11 @@ const LogoStyles = styled.div`
 
 export default function Logo() {
   return (
-    <LogoStyles>
-      <img src="/Rocks-Glass-Icon.svg"></img>
-      <p>Drinks DB</p>
-    </LogoStyles>
+    <Link href="/">
+      <LogoStyles>
+        <img src="/Rocks-Glass-Icon.svg"></img>
+        <p>Drinks DB</p>
+      </LogoStyles>
+    </Link>
   )
 }

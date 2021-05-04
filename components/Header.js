@@ -6,9 +6,13 @@ import Nav from './Nav';
 const HeaderStyles = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  background-color: white;
   height: 72px;
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 2rem;
 `;
 
 export default function Header() {

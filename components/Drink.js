@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import DrinkStyles from "./styles/DrinkStyles";
 
 const DrinkNameStyles = styled.h3`
-  padding: 1rem;
+  padding: 0rem 2rem;
   font-family: 'Offside';
   a {
     color: var(--orange);
