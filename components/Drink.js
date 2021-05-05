@@ -14,7 +14,7 @@ export default function Drink({ drink }) {
   return (
     <DrinkStyles>
       <img 
-        src={drink?.photo?.image?.publicUrlTransformed} 
+        src={drink?.photo?.image?.publicUrlTransformed || '/Rocks-Glass-Icon.svg'} 
         alt={drink.name}>
       </img>
       <DrinkNameStyles>
