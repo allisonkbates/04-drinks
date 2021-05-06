@@ -13,6 +13,7 @@ const HeaderStyles = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
   padding: 2rem;
+  width: 100%;
 `;
 
 export default function Header() {

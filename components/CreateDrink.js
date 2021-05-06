@@ -1,9 +1,12 @@
 import { useMutation } from '@apollo/client';
 import gql from "graphql-tag";
+import Router from 'next/router';
 import useForm from "../lib/useForm";
 import FormStyles from './styles/FormStyles';
 import PrimaryBtn from './styles/PrimaryBtn';
 import DisplayError from './DisplayError';
+import { ALL_DRINKS_QUERY } from './Drinks';
+
 
 const CREATE_DRINK_MUTATION = gql`
   mutation CREATE_DRINK_MUTATION (  
@@ -31,6 +34,7 @@ export default function CreateDrink() {
   });
   const [createDrink, { loading, error, data }] = useMutation(CREATE_DRINK_MUTATION, {
     variables: inputs,
+    refetchQueries: [{ query: ALL_DRINKS_QUERY }],
   });
 
   return (
@@ -39,8 +43,12 @@ export default function CreateDrink() {
       e.preventDefault();
       console.log(inputs);
       // Submit the input fields to the backend
-      await createDrink();
+      const res = await createDrink();
       clearForm();
+      // Go to that product's page
+      Router.push({
+        pathname: `/drink/${res.data.createDrink.id}`
+      })
     }}>
       <DisplayError error={error} />
       <fieldset disabled={loading} aria-busy={loading}>

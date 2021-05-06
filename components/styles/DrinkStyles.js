@@ -8,18 +8,18 @@ const DrinkStyles = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 8px;
+  cursor: pointer;
   img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 8px 8px 0px 0px;
   }
-  p {
-    line-height: 2;
-    font-weight: 300;
-    flex-grow: 1;
-    padding: 0 3rem;
-    font-size: 1.5rem;
+  a {
+    color: var(--orange);
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-family: 'Offside';
   }
   .buttonList {
     display: grid;
