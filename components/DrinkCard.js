@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import DrinkStyles from "./styles/DrinkStyles";
+import DrinkStyles from "./styles/DrinkCardStyles";
 
-export default function Drink({ drink }) {
+export default function DrinkCard({ drink }) {
   return (
     <Link href={`/drink/${drink.id}`}>
       <DrinkStyles>

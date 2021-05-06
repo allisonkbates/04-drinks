@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import gql from "graphql-tag"
 import styled from 'styled-components';
-import Drink from './Drink';
+import Drink from './DrinkCard';
 
 export const ALL_DRINKS_QUERY = gql`
   query ALL_DRINKS_QUERY {
