@@ -7,7 +7,7 @@ const SearchStyles = styled.div`
   justify-content: center;
   flex-grow: 1;
   border: 1px solid var(--orange);
-  border-radius: 8px;
+  border-radius: 6px;
   height: 40px;
   input {
     width: 100%;

@@ -34,6 +34,7 @@ const DrinkRecipeStyles = styled.div`
   }
   p {
     color: var(--darkGray);
+    font-size: 1.5rem;
   }
   .line {
     margin: 6px 0px;

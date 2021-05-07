@@ -29,8 +29,8 @@ const CREATE_DRINK_MUTATION = gql`
 export default function CreateDrink() {
   const { inputs, handleChange, clearForm, resetForm } = useForm({
     image: '',
-    name: 'Negroni',
-    description: 'This is the best drink.'
+    name: '',
+    description: ''
   });
   const [createDrink, { loading, error, data }] = useMutation(CREATE_DRINK_MUTATION, {
     variables: inputs,
@@ -68,7 +68,7 @@ export default function CreateDrink() {
             type="text" 
             id="name" 
             name="name" 
-            placeholder="Drink Name" 
+            placeholder="What is your drink's name?" 
             value={inputs.name}  
             onChange={handleChange}
           />
@@ -78,7 +78,7 @@ export default function CreateDrink() {
           <textarea 
             id="description"
             name="description"
-            placeholder="Drink Description"
+            placeholder="Tell us how to make this drink..."
             value={inputs.description}
             onChange={handleChange}
           />

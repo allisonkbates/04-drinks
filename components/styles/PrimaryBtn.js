@@ -6,7 +6,7 @@ const PrimaryBtn = styled.button`
   border: none;
   height: 40px;
   padding: 0rem 2rem;
-  border-radius: 8px;
+  border-radius: 6px;
   font-family: 'Offside';
   font-size: 1.5rem;
   margin: 0px;
