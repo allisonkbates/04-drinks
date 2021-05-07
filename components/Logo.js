@@ -24,7 +24,7 @@ export default function Logo() {
     <Link href="/">
       <LogoStyles>
         <img src="/Rocks-Glass-Icon.svg"></img>
-        <p>Drinks DB</p>
+        <p>DrinksDB</p>
       </LogoStyles>
     </Link>
   )

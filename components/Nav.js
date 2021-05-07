@@ -6,7 +6,7 @@ import PrimaryLink from './styles/PrimaryLink';
 const NavStyles = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   /* flex-grow: 1; */
 `;
 

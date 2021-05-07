@@ -1,10 +1,9 @@
-import SingleDrink from "../../components/SingleDrink";
+import DrinkRecipe from '../../components/DrinkRecipe';
 
 export default function SingleDrinkPage({query}) {
 
   return (
-    <SingleDrink id={query.id}></SingleDrink>
-  )
-  
+    <DrinkRecipe id={query.id}></DrinkRecipe>
+  )  
 }
 

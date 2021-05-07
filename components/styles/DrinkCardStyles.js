@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const DrinkStyles = styled.div`
+const DrinkCardStyles = styled.div`
   background: white;
   border: 1px solid var(--offWhite);
   box-shadow: var(--bs);
@@ -37,4 +37,4 @@ const DrinkStyles = styled.div`
   }
 `;
 
-export default DrinkStyles;
+export default DrinkCardStyles;
