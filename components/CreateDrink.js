@@ -7,16 +7,20 @@ import PrimaryBtn from './styles/PrimaryBtn';
 import DisplayError from './DisplayError';
 import { ALL_DRINKS_QUERY } from './Drinks';
 
-
+/* TODO: Check this query! */
 const CREATE_DRINK_MUTATION = gql`
   mutation CREATE_DRINK_MUTATION (  
     $name: String!,
-    $description: String!
+    $ingredients: String!
+    $preparation: String!
+    $barware: String
     $image: Upload
   ) {
   createDrink(data: {
     name: $name,
-    description: $description,
+    ingredients: $ingredients,
+    preparation: $preparation,
+    barware: $barware,
     status: "AVAILABLE",
     photo: { create: { image: $image, altText: $name } }
   }) {
@@ -30,7 +34,7 @@ export default function CreateDrink() {
   const { inputs, handleChange, clearForm, resetForm } = useForm({
     image: '',
     name: '',
-    description: ''
+    ingredients: ''
   });
   const [createDrink, { loading, error, data }] = useMutation(CREATE_DRINK_MUTATION, {
     variables: inputs,
@@ -79,7 +83,7 @@ export default function CreateDrink() {
             id="description"
             name="description"
             placeholder="Tell us how to make this drink..."
-            value={inputs.description}
+            value={inputs.ingredients}
             onChange={handleChange}
           />
         </label>

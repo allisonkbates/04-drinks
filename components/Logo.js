@@ -23,7 +23,7 @@ export default function Logo() {
   return (
     <Link href="/">
       <LogoStyles>
-        <img src="/Rocks-Glass-Icon.svg"></img>
+        <img src="/OLD-FASHIONED-GLASS.svg"></img>
         <p>DrinksDB</p>
       </LogoStyles>
     </Link>

@@ -8,7 +8,6 @@ export const ALL_DRINKS_QUERY = gql`
     allDrinks {
       id
       name
-      description
       photo {
         id
         image {

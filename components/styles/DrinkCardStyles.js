@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const DrinkCardStyles = styled.div`
   background: white;
-  border: 1px solid var(--offWhite);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: var(--bs);
   position: relative;
   display: flex;
