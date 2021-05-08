@@ -7,10 +7,10 @@ const DrinkRecipeStyles = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  color: var(--darkGray);
   .left-column, .right-column {
     flex: 0 1 50%;
   }
-
   img {
     width: 100%;
     height: 300px;
@@ -26,15 +26,21 @@ const DrinkRecipeStyles = styled.div`
   h2 {
     color: var(--orange);
     font-family: 'Offside'; 
+    margin-bottom: 0;
   }
   h3 {
-    color: var(--darkGray);
     font-weight: 400;
     margin: -6px 0px 0px;
   }
   p {
-    color: var(--darkGray);
     font-size: 1.5rem;
+  }
+  ul, ol {
+    padding: 0rem 2rem;
+    margin: 1rem 0rem;
+  }
+  li::marker {
+    color: var(--orange);
   }
   .line {
     margin: 6px 0px;
@@ -48,8 +54,6 @@ const DrinkRecipeStyles = styled.div`
     border: 1px solid var(--orange);
     border-radius: 8px;
   }
-
-  .
 `;
 
 export default DrinkRecipeStyles;
