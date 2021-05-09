@@ -15,6 +15,7 @@ const SINGLE_ITEM_QUERY = gql`
       ingredients
       preparation
       barware
+      source
       relatedDrinks {
         name,
         id
@@ -40,7 +41,6 @@ export default function DrinkRecipe({ id }) {
   if(loading) return <p>Loading...</p>
   if(error) return <DisplayError error={error}/>
   const { Drink } = data;
-  console.log(Drink.barware);
 
   return (
     <DrinkRecipeStyles>
@@ -49,7 +49,7 @@ export default function DrinkRecipe({ id }) {
       </Head>
       <div className="left-column">
         <h1>{Drink.name}</h1>
-        <h3>By NYTimes Cooking</h3>
+        <h3>{Drink.source}</h3>
         <div className="line"></div>
         <h2>Ingredients</h2>
         <ul>{makeListItems(Drink.ingredients, 'ingredients')}</ul>
@@ -60,7 +60,7 @@ export default function DrinkRecipe({ id }) {
       <div className="right-column">
         <img src={Drink.photo.image.publicUrlTransformed} alt={Drink.photo.altText} className="drink__img"></img>
         <h2>Variations</h2>
-        {Drink.relatedDrinks.map(drink => <Link href={`/drink/${drink.id}`}><a>{drink.name}</a></Link>)}
+        {Drink.relatedDrinks.map(drink => <Link href={`/drink/${drink.id}`} key={drink.id}><a>{drink.name}</a></Link>)}
         <h2>Barware</h2>
         <div className="barware">
           <img src={Drink.barware ? `/${Drink.barware}.svg` : "/OLD-FASHIONED-GLASS.svg"} className="barware__img"></img>

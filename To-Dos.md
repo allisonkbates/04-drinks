@@ -15,3 +15,13 @@ See full to dos in Drinks V3. This list is just the list of items that will be d
 
 - Add mobile styles - logo breaks and looks bad at <800px
 - Does not support conditonal rendering for logged in / logged out state
+
+## Plan for DB/Auth
+
+Tags, ingredients and variations are relationships
+Implement search
+Do liquor cabinet page as one page with expandable sections
+
+For auth -
+My ingredients
+My drinks
