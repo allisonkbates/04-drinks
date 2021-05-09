@@ -43,6 +43,11 @@ const DrinkRecipeStyles = styled.div`
   li::marker {
     color: var(--orange);
   }
+  a {
+    color: var(--darkGray);
+    text-decoration: underline;
+    font-size: 1.5rem;
+  }
   .line {
     margin: 6px 0px;
     height: 3px;

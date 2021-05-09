@@ -1,6 +1,7 @@
 import gql from "graphql-tag";
 import { useQuery } from '@apollo/client';
 import Head from 'next/head';
+import Link from 'next/link';
 import DisplayError from './DisplayError';
 import DrinkRecipeStyles from './styles/DrinkRecipeStyles';
 import makeListItems from '../lib/makeListItems';
@@ -14,6 +15,10 @@ const SINGLE_ITEM_QUERY = gql`
       ingredients
       preparation
       barware
+      relatedDrinks {
+        name,
+        id
+      }
       photo {
         altText,
         image {
@@ -54,7 +59,8 @@ export default function DrinkRecipe({ id }) {
       </div>
       <div className="right-column">
         <img src={Drink.photo.image.publicUrlTransformed} alt={Drink.photo.altText} className="drink__img"></img>
-        {/* <h2>Variations</h2> */}
+        <h2>Variations</h2>
+        {Drink.relatedDrinks.map(drink => <Link href={`/drink/${drink.id}`}><a>{drink.name}</a></Link>)}
         <h2>Barware</h2>
         <div className="barware">
           <img src={Drink.barware ? `/${Drink.barware}.svg` : "/OLD-FASHIONED-GLASS.svg"} className="barware__img"></img>
