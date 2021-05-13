@@ -38,7 +38,7 @@ export default function DrinkRecipe({ id }) {
   });
   console.log({ data, loading, error });
   
-  if(loading) return <p>Loading...</p>
+  if(loading) return <p>Loading...</p>  
   if(error) return <DisplayError error={error}/>
   const { Drink } = data;
 

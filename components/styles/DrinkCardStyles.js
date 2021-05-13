@@ -15,25 +15,8 @@ const DrinkCardStyles = styled.div`
     object-fit: cover;
     border-radius: 8px 8px 0px 0px;
   }
-  a {
-    color: var(--orange);
-    padding: 1rem 2rem;
-    font-size: 2rem;
-    font-family: 'Offside';
-  }
-  .buttonList {
-    display: grid;
-    width: 100%;
-    border-top: 1px solid var(--lightGray);
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 1px;
-    background: var(--lightGray);
-    & > * {
-      background: white;
-      border: 0;
-      font-size: 1rem;
-      padding: 1rem;
-    }
+  .drink-card__bar {
+    margin: 1rem 2rem;
   }
 `;
 

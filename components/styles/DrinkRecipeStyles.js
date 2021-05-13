@@ -66,7 +66,6 @@ const DrinkRecipeStyles = styled.div`
     line-height: normal;
   }
   .barware__img {
-    width: 24px;
     margin-right: 1.5rem;
   }
   .call-out {
