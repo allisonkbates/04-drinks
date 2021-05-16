@@ -1,5 +1,9 @@
 import gql from "graphql-tag"
 import { useQuery, useMutation } from "@apollo/client";
+import FormStyles from './styles/FormStyles';
+import DisplayError from './DisplayError';
+import PrimaryBtn from './styles/PrimaryBtn';
+import useForm from '../lib/useForm';
 
 const SINGLE_DRINK_QUERY = gql`
   query SINGLE_DRINK_QUERY($id: ID!) {
@@ -22,7 +26,6 @@ const UPDATE_DRINK_MUTATION = gql`
     updateDrink(
       id: $id,
       data: {
-        id: $id,
         name: $name,
         ingredients: $ingredients,
         preparation: $preparation,
@@ -41,16 +44,61 @@ export default function EditDrink({ id }) {
   const { data, error, loading } = useQuery(SINGLE_DRINK_QUERY, {
     variables: { id },
   });
+  
 
   // 2. Get the mutation to update the product 
-  const [updateDrink, { data: updateData, error: updateError, loading: updateLoading }] = useMutation(UPDATE_DRINK_MUTATION, {
-    variables: {
-      id
-      // TODO: Pass in updates to drink here!
-    }
-  })
+  const [updateDrink, { data: updateData, error: updateError, loading: updateLoading }] = useMutation(UPDATE_DRINK_MUTATION);
+  // 2.5  Create some state for this form
+  const { inputs, handleChange, clearForm, resetForm } = useForm(data?.Drink);
+  if (loading) return <p>Loading...</p>
   // 3. Use the form to handle the updates
-
-
-  return <p>Update {id}</p>
+  return (
+    <FormStyles
+      // Handle Submit!
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const res = await updateDrink({
+          variables: {
+            id,
+            name: inputs.name,
+            ingredients: inputs.ingredients,
+          },
+        }).catch(console.error);
+        console.log(res);
+      //   console.log(inputs);
+      //   // Submit the input fields to the backend
+      //   const res = await createDrink();
+      //   clearForm();
+      //   // Go to that product's page
+      //   Router.push({
+      //     pathname: `/drink/${res.data.createDrink.id}`
+      //   })
+      }}>
+      <DisplayError error={error || updateError} />
+      <fieldset disabled={updateLoading} aria-busy={updateLoading}>
+        <label htmlFor="name">
+          Drink Name
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="What is your drink's name?"
+            value={inputs.name}
+            onChange={handleChange}
+          />
+        </label>
+        <label htmlFor="description">
+          Drink Description
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Tell us how to make this drink..."
+            value={inputs.ingredients}
+            onChange={handleChange}
+          />
+        </label>
+        <PrimaryBtn type="submit">Update Drink</PrimaryBtn>
+      </fieldset>
+    </FormStyles>
+  )
 }

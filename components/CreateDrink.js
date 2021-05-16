@@ -12,7 +12,7 @@ const CREATE_DRINK_MUTATION = gql`
   mutation CREATE_DRINK_MUTATION (  
     $name: String!,
     $ingredients: String!
-    $preparation: String!
+    $preparation: String
     $barware: String
     $image: Upload
   ) {
@@ -40,7 +40,7 @@ export default function CreateDrink() {
     variables: inputs,
     refetchQueries: [{ query: ALL_DRINKS_QUERY }],
   });
-
+  /* TODO: Add all fields to this form */
   return (
     <FormStyles 
       onSubmit={ async (e) => {
@@ -77,11 +77,11 @@ export default function CreateDrink() {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="description">
-          Drink Description
+        <label htmlFor="ingredients">
+          Drink Ingredients
           <textarea 
-            id="description"
-            name="description"
+            id="ingredients"
+            name="ingredients"
             placeholder="Tell us how to make this drink..."
             value={inputs.ingredients}
             onChange={handleChange}
