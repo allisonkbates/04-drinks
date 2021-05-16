@@ -73,7 +73,7 @@ export default function CreateDrink() {
             id="name" 
             name="name" 
             placeholder="What is your drink's name?" 
-            value={inputs.name}  
+            value={inputs.name || ""}  
             onChange={handleChange}
           />
         </label>
@@ -83,7 +83,7 @@ export default function CreateDrink() {
             id="ingredients"
             name="ingredients"
             placeholder="Tell us how to make this drink..."
-            value={inputs.ingredients}
+            value={inputs.ingredients || ""}
             onChange={handleChange}
           />
         </label>

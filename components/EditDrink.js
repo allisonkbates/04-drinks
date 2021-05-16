@@ -64,10 +64,6 @@ export default function EditDrink({ id }) {
             ingredients: inputs.ingredients,
           },
         }).catch(console.error);
-        console.log(res);
-      //   console.log(inputs);
-      //   // Submit the input fields to the backend
-      //   const res = await createDrink();
       //   clearForm();
       //   // Go to that product's page
       //   Router.push({
@@ -83,7 +79,7 @@ export default function EditDrink({ id }) {
             id="name"
             name="name"
             placeholder="What is your drink's name?"
-            value={inputs.name}
+            value={inputs.name || ""}
             onChange={handleChange}
           />
         </label>
@@ -93,7 +89,7 @@ export default function EditDrink({ id }) {
             id="description"
             name="description"
             placeholder="Tell us how to make this drink..."
-            value={inputs.ingredients}
+            value={inputs.ingredients || ""}
             onChange={handleChange}
           />
         </label>
