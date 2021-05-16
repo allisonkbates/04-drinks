@@ -7,8 +7,8 @@ import DrinkRecipeStyles from './styles/DrinkRecipeStyles';
 import makeListItems from '../lib/makeListItems';
 import formatBarware from '../lib/formatBarware';
 
-const SINGLE_ITEM_QUERY = gql`
-  query SINGLE_ITEM_QUERY($id: ID!) {
+const SINGLE_DRINK_QUERY = gql`
+  query SINGLE_DRINK_QUERY($id: ID!) {
     Drink(where: { id: $id }) {
       id
       name
@@ -31,7 +31,7 @@ const SINGLE_ITEM_QUERY = gql`
 `;
 
 export default function DrinkRecipe({ id }) {
-  const { data, loading, error } = useQuery(SINGLE_ITEM_QUERY, {
+  const { data, loading, error } = useQuery(SINGLE_DRINK_QUERY, {
     variables: {
       id: id,
     }

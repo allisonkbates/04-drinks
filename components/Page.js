@@ -38,7 +38,7 @@ const GlobalStyles = createGlobalStyle`
 const InnerStyles = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: 6rem 2rem; /* standardize this value to spacing variable */
 `
 
 export default function Page({ children }) {

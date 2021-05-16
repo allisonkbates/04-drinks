@@ -12,17 +12,19 @@ export default function DrinkCard({ drink }) {
           alt={drink.name}>
         </img>
         <div className="drink-card__bar">
-        <Link href={`/drink/${drink.id}`}><SecondaryLink>{drink.name}</SecondaryLink></Link>
-        <Link href={{
-          pathname: 'edit',
-          query: {
-            id: drink.id
-          },
-        }}>
-          <TertiaryLink>
-            Edit ✏️
-          </TertiaryLink>
-        </Link>
+          <Link href={`/drink/${drink.id}`}>
+            <SecondaryLink>{drink.name}</SecondaryLink>
+          </Link>
+          <Link href={{
+            pathname: 'edit',
+            query: {
+              id: drink.id
+            },
+          }}>
+            <TertiaryLink>
+              Edit ✏️
+            </TertiaryLink>
+          </Link>
         </div>
       </DrinkCardStyles>
     </Link>

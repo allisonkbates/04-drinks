@@ -58,7 +58,6 @@ const DrinkRecipeStyles = styled.div`
     display: flex;
     align-items: flex-end;
     margin: 2rem 0rem;
-
   }
   .barware__name {
     text-transform: capitalize;
