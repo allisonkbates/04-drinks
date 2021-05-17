@@ -11,9 +11,16 @@ const DELETE_DRINK_MUTATION = gql`
   }
 `;
 
+function update(cache, payload) {
+  console.log(payload);
+  console.log('running the upate function after delete');
+  cache.evict(cache.identify(payload.data.deleteDrink));
+}
+
 export default function DeleteDrink({ id, children }) {
   const [deleteDrink, { loading }] = useMutation(DELETE_DRINK_MUTATION, {
     variables: { id: id },
+    update: update,
   }); 
   return (
     <SecondaryBtn 
