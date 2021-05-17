@@ -12,7 +12,9 @@ const DrinkCardStyles = styled.div`
   
   :hover {
     transition: all 0.2s ease-out;
+    border: 1px solid var(--orange);
   }
+
   img {
     width: 100%;
     height: 300px;
@@ -21,6 +23,9 @@ const DrinkCardStyles = styled.div`
   }
   .drink-card__bar {
     margin: 1rem 2rem; /* standardize */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 

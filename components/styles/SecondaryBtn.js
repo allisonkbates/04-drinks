@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const PrimaryBtn = styled.button`
-  background-color: var(--orange);
-  color: var(--white);
+const SecondaryBtn = styled.button`
+  background-color: var(--white);
+  color: var(--orange);
   border: 1px solid var(--orange);
   height: 40px;
   padding: 0rem 2rem;
@@ -13,4 +13,4 @@ const PrimaryBtn = styled.button`
   cursor: pointer;
 `;
 
-export default PrimaryBtn;
+export default SecondaryBtn;
