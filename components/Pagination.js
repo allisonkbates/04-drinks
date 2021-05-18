@@ -18,8 +18,10 @@ export default function Pagination( { page }) {
   const { data, error, loading } = useQuery(PAGINATION_QUERY);
   if(loading) return 'Loading...';
   if(error) return <DisplayError error={error} />;
+
   const { count } = data._allDrinksMeta;
   const pageCount = Math.ceil(count / perPage);
+
   return (
     <PaginationStyles>
       <Head>
