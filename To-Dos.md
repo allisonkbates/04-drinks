@@ -18,10 +18,13 @@ See full to dos in Drinks V3. This list is just the list of items that will be d
 
 ## Plan for DB/Auth
 
-Tags, ingredients and variations are relationships
 Implement search
 Do liquor cabinet page as one page with expandable sections
 
 For auth -
 My ingredients
 My drinks
+
+## Create / Edit Drink
+
+- Support fields needed to create drinks & match backend

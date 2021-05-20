@@ -25,7 +25,6 @@ const DrinksListStyles = styled.div`
   grid-gap: 30px;
 `;
 
-
 export default function Drinks({ page }) {
   const { data, error, loading } = useQuery(ALL_DRINKS_QUERY, {
     variables: {
