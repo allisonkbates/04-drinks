@@ -55,6 +55,7 @@ export default function CreateDrink() {
       })
     }}>
       <DisplayError error={error} />
+      <h2>Create a Drink</h2>
       <fieldset disabled={loading} aria-busy={loading}>
         <label htmlFor="image">
           Image
