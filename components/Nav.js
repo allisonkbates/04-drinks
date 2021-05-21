@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Link from 'next/link';
 import PrimaryLink from './styles/PrimaryLink';
 import { useUser } from "./User";
+import SignOut from './SignOut';
 
 const NavStyles = styled.div`
   display: flex;
@@ -20,6 +21,7 @@ export default function Nav() {
             <Link href="/add"><PrimaryLink>Add</PrimaryLink></Link>
             <Link href="/add"><PrimaryLink>Saved Drinks</PrimaryLink></Link>
             <Link href="/add"><PrimaryLink>Liquor Cabinet</PrimaryLink></Link>
+            <SignOut />
           </>
         )
       }  
