@@ -8,7 +8,6 @@ export default function DrinksPage() {
 
   return (
     <div>
-      <Pagination page={page || 1}/>
       <Drinks page={page || 1}/>
       <Pagination page={page || 1}/>
     </div>
