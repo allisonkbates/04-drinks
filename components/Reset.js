@@ -5,56 +5,46 @@ import PrimaryBtn from './styles/PrimaryBtn';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/client';
 
-const SIGNUP_MUTATION = gql`
-  mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!) {
-    createUser(data: {
-      email: $email,
-      name: $name,
-      password: $password,
-    }) {
-      id
-      email
-      name
+const RESET_MUTATION = gql`
+  mutation RESET_MUTATION($email: String!, $token: String!, $password: String!) {
+    redeemUserPasswordResetToken(
+      email: $email, 
+      token: $token, 
+      password: $password
+    ) {
+      message
+      code
     }
   }
 `;
 
-export default function SignUp() {
+export default function Reset({ token }) {
 
-  const { inputs, handleChange, clearForm, resetForm } = useForm({ 
+  const { inputs, handleChange, clearForm, resetForm } = useForm({
     email: '',
-    name: '',
     password: '',
+    token,
   });
-  
-  const [ signup, { data, loading, error }] = useMutation(SIGNUP_MUTATION, {
+
+  const [reset, { data, loading, error }] = useMutation(RESET_MUTATION, {
     variables: inputs,
   });
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await signup().catch(console.error);
+    await reset().catch(console.error);
     console.log(error)
     resetForm();
   }
 
+  const successfulError =  data?.redeemUserPasswordResetToken?.code ? data?.redeemUserPasswordResetToken : undefined;
+
   return (
     <FormStyles method="POST" onSubmit={handleSubmit}>
-      <DisplayError error={error} />
-      <h2>Sign Up For An Account</h2>
+      <DisplayError error={error || successfulError} />
+      <h2>Reset Your Password</h2>
       <fieldset disabled={loading} aria-busy={loading}>
-      {data?.createUser && <p>Signed up with {data.createUser.email} - Please go ahead and sign in!</p>}
-        <label htmlFor="name">
-          Name
-          <input
-            type="name"
-            name="name"
-            placeholder="Enter your name"
-            autoComplete="name"
-            value={inputs.name || ""}
-            onChange={handleChange}
-          />
-        </label>
+        {data?.redeemUserPasswordResetToken === null && <p>Success! Please sign in with your new password.</p>}
         <label htmlFor="email">
           Email
           <input
@@ -76,7 +66,7 @@ export default function SignUp() {
             onChange={handleChange}
           />
         </label>
-        <PrimaryBtn type="submit">Sign Up</PrimaryBtn>
+        <PrimaryBtn type="submit">Reset Password</PrimaryBtn>
       </fieldset>
     </FormStyles>
   )

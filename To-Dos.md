@@ -10,11 +10,12 @@ See full to dos in Drinks V3. This list is just the list of items that will be d
 ## Styles
 
 - Grays not well defined
+- Mobile styles
+- pagination styles to match branding
 
 ## Header Component
 
 - Add mobile styles - logo breaks and looks bad at <800px
-- Does not support conditonal rendering for logged in / logged out state
 
 ## Plan for DB/Auth
 
