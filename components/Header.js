@@ -25,6 +25,7 @@ const HeaderStyles = styled.div`
 
 export default function Header() {
   return(
+    <>
     <HeaderStyles>
       <div className="container">
         <Logo/>
@@ -32,5 +33,6 @@ export default function Header() {
         <Nav />
       </div>
     </HeaderStyles>
+    </>
   );
 }

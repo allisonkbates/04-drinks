@@ -4,28 +4,24 @@ See full to dos in Drinks V3. This list is just the list of items that will be d
 
 ## General
 
-- [x] to fix className does not match issue: https://github.com/vercel/next.js/issues/7322#issuecomment-811463256
-- uninstall next google fonts and find out how to load fonts
-
-## Styles
+## General Styles Issue
 
 - Grays not well defined
 - Mobile styles
 - pagination styles to match branding
+- clean up buttons & links styling
 
 ## Header Component
 
 - Add mobile styles - logo breaks and looks bad at <800px
 
-## Plan for DB/Auth
+## Videos Skipped
 
-Implement search
-Do liquor cabinet page as one page with expandable sections
+- Video 42 - Go back to add reset password
 
-For auth -
-My ingredients
-My drinks
+## Drinks Data
 
-## Create / Edit Drink
-
-- Support fields needed to create drinks & match backend
+- Add / Edit / Delete Drinks should only be visible to admins
+- Drinks Fields:
+  - Support fields needed to create drinks & match backend
+  - Determine whether Barware should be its own schema so that we can get options from backend and serve images

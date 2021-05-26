@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
     --orange: #D4652E;
     --lightOrange: #FFF8F2;
     --darkGray: #4F4f4F;
+    --lightGrey: #c4c4c4;
     --white: #FFFFFF;
     --maxWidth: 1200px;
     --bs: 0 2px 10px 0 rgba(0,0,0,0.09);

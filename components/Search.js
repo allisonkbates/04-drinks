@@ -1,40 +1,25 @@
-import styled from "styled-components"
-
-const SearchStyles = styled.div`
-  margin: 0px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  border: 1px solid var(--orange);
-  border-radius: 6px;
-  height: 40px;
-  input {
-    width: 100%;
-    border: none;
-    font-size: 16px;
-    outline: none;
-    padding: 6px;
-    color: var(--orange);
-  }
-  input::placeholder {
-    color: var(--orange);
-    font-family: 'Oxygen';
-    font-weight: 400;
-  }
-  input::-webkit-search-cancel-button{
-    appearance: none;
-  }
-  img {
-    padding: 0px 8px;
-  }
-`;
+import SearchStyles from './styles/SearchStyles';
+import useForm from '../lib/useForm';
+import Router from 'next/router';
 
 export default function Search() {
+  const { inputs, handleChange, clearForm, resetForm } = useForm({
+    search: '',
+  });
+
   return (
-    <SearchStyles>
-      <img src="/Search-Icon.svg"></img>
-      <input type="search" placeholder="Search for a Drink..."/>
+    <SearchStyles onSubmit={
+      async (e) => {
+        e.preventDefault();
+        Router.push({
+        pathname: `/drinks/`,
+        query: `search=${inputs.search}`,
+      })
+      }
+    }>
+        <img src="/Search-Icon.svg"></img>
+        <input type="search" placholder="Search for a drink" onChange={handleChange} id="search" name="search"></input>
+        <button type="submit">Search</button>
     </SearchStyles>
   )
 }
