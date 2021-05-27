@@ -41,8 +41,8 @@ export default function Drinks( { page, search } ) {
     },
     refetchQueries: [{ query: ALL_DRINKS_QUERY }],
   });
-  console.log(`data: ${data}`, error, loading);
-  // console.log(`page: ${page}, searchType: ${typeof search}, search: ${search}`);
+  console.log(data, error, loading);
+  console.log(`page: ${page}, searchType: ${typeof search}, search: ${search}`);
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error {error.msg}</p>
   return (

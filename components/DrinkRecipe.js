@@ -58,7 +58,7 @@ export default function DrinkRecipe({ id }) {
         <ol>{makeListItems(Drink.preparation, 'preparation steps')}</ol>
       </div>
       <div className="right-column">
-        <img src={Drink.photo.image.publicUrlTransformed} alt={Drink.photo.altText} className="drink__img"></img>
+        <img src={Drink?.photo?.image?.publicUrlTransformed || '/fallback-drink-img.png'} alt={Drink?.photo?.altText || Drink.name} className="drink__img"></img>
         <h2>Variations</h2>
         {Drink.relatedDrinks.map(drink => <Link href={`/drink/${drink.id}`} key={drink.id}><a>{drink.name}</a></Link>)}
         <h2>Barware</h2>

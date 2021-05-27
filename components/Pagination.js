@@ -7,15 +7,25 @@ import gql from 'graphql-tag';
 import { perPage } from '../config';
 
 export const PAGINATION_QUERY = gql`
-  query PAGINATION_QUERY {
-    _allDrinksMeta {
+  query PAGINATION_QUERY($search: String) {
+    _allDrinksMeta(where: {
+      OR: [
+        {name_contains_i: $search}
+        {ingredients_contains_i: $search}
+        {preparation_contains_i: $search}
+      ]
+    }) {
       count
     }
   }
 `;
 
-export default function Pagination( { page }) {
-  const { data, error, loading } = useQuery(PAGINATION_QUERY);
+export default function Pagination( { page, search }) {
+  const { data, error, loading } = useQuery(PAGINATION_QUERY, {
+    variables: {
+      search: search
+    }
+  });
   if(loading) return 'Loading...';
   if(error) return <DisplayError error={error} />;
 

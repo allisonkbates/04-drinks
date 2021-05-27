@@ -10,7 +10,7 @@ export default function DrinksPage() {
   return (
     <div>
       <Drinks page={page || 1} search={search || ''}/>
-      <Pagination page={page || 1}/>
+      <Pagination page={page || 1 } search={search || ''}/>
     </div>
   )
 }

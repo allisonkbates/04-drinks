@@ -10,7 +10,7 @@ export default function DrinkCard({ drink }) {
       <DrinkCardStyles>
         <Link href={`/drink/${drink.id}`}>
           <img 
-            src={drink?.photo?.image?.publicUrlTransformed || 'fallback-drink-img.png'} 
+            src={drink?.photo?.image?.publicUrlTransformed || '/fallback-drink-img.png'} 
             alt={drink.name}>
           </img>
         </Link>
