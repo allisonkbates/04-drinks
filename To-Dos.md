@@ -31,3 +31,6 @@ See full to dos in Drinks V3. This list is just the list of items that will be d
 - Drinks Fields:
   - Support fields needed to create drinks & match backend
   - Determine whether Barware should be its own schema so that we can get options from backend and serve images
+
+
+## Adding a to do
