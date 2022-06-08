@@ -11,8 +11,8 @@ const DrinkCardStyles = styled.div`
   cursor: pointer;
   
   :hover {
-    transition: all 0.2s ease-out;
-    border: 1px solid var(--orange);
+    transition: all 0.3s ease-out;
+    transform: translateX(3px) translateY(3px);
   }
 
   img {

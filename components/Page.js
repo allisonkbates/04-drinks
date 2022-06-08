@@ -4,7 +4,8 @@ import Header from "./Header";
 const GlobalStyles = createGlobalStyle`
   html {
     --orange: #D4652E;
-    --lightOrange: #FFF8F2;
+    --lightOrange: #FDD7C5;
+    --lightestOrange: #FFF8F2;
     --darkGray: #4F4f4F;
     --lightGrey: #c4c4c4;
     --white: #FFFFFF;
@@ -22,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 1.5rem;
     line-height: 2;
-    background-color: var(--lightOrange);
+    background-color: var(--lightestOrange);
   }
   a {
     text-decoration: none;

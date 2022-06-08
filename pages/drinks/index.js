@@ -1,6 +1,7 @@
 import Drinks from "../../components/Drinks";
 import Pagination from '../../components/Pagination';
 import { useRouter } from "next/dist/client/router";
+import Filters from "../../components/Filters";
 
 export default function DrinksPage() {
   const { query } = useRouter();
@@ -9,6 +10,7 @@ export default function DrinksPage() {
 
   return (
     <div>
+      <Filters></Filters>
       <Drinks page={page || 1} search={search || ''}/>
       <Pagination page={page || 1 } search={search || ''}/>
     </div>
